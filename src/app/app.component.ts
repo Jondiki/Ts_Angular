@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { RacesComponent } from './races/races.component';
+import { TeamComponent } from './team/team.component';
   type Person = {
     name: string;
     age: number;
@@ -12,8 +13,7 @@ bootstrapApplication(RacesComponent)
 @Component({
   selector: 'ns-root',
   standalone: true,
-
-  imports: [RacesComponent, CommonModule],
+  imports: [RacesComponent, CommonModule,TeamComponent],
   templateUrl: "./app.component.html",
   styleUrl: './app.component.css'
 })
