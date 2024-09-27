@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { RacesComponent } from './races/races.component';
-import { TeamComponent } from './team/team.component';
+import { RacesComponent } from './components/races/races.component';
+import { TeamComponent } from './components/team/team.component';
   type Person = {
     name: string;
     age: number;
