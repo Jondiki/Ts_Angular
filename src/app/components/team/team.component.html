@@ -3,7 +3,9 @@
 <h1>{{title}} number : {{number}}</h1>
 
 <div class="cup">
-  <img [src]="imageUrl" >
+  <!-- <img [src]="imageUrl" > -->
+  <input type="text"  [(ngModel)]="title">
 </div>
 <!-- /event binding -->
-<button (click)="addNumber()"> Add number</button>
+
+<p><button (click)="onLike()"> {{likeButtonText}}</button> {{like}}</p>
