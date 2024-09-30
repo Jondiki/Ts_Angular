@@ -1,11 +1,12 @@
 <p>team works!</p>
 
-<h1>{{title}} number : {{number}}</h1>
 
+<h1>{{myTeam.title}}</h1>
+<!-- <h1>{{title}} number : {{number}}</h1> -->
 <div class="cup">
   <!-- <img [src]="imageUrl" > -->
-  <input type="text"  [(ngModel)]="title">
+  <input type="text"  [(ngModel)]="myTeam.title">
 </div>
 <!-- /event binding -->
 
-<p><button (click)="onLike()"> {{likeButtonText}}</button> {{like}}</p>
+<p><button (click)="onLike()"> {{likeButtonText}}</button> {{myTeam.like}}</p>
