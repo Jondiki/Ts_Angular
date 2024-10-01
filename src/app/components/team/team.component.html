@@ -10,3 +10,7 @@
 <!-- /event binding -->
 
 <p><button (click)="onLike()"> {{likeButtonText}}</button> {{myTeam.like}}</p>
+
+@if ( likeButtonText === 'Unlike') {
+  <p>  Liked</p>
+}
