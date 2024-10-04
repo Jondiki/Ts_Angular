@@ -1,11 +1,12 @@
 import { Component,Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NgClass, NgStyle, UpperCasePipe, TitleCasePipe } from '@angular/common';
 import { Team } from '../../models/team';
 
 @Component({
   selector: 'ns-team',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, NgClass, NgStyle, TitleCasePipe ,UpperCasePipe],
   templateUrl: './team.component.html',
   styleUrl: './team.component.css'
 
@@ -15,7 +16,7 @@ export class TeamComponent implements OnInit {
   @Input() myTeam !: Team;  // variable à injecter
   likeButtonText!: string;
   userHasLiked!: boolean;
-
+  redcolor = 'red';
 // ngOnInit  est une méthode du cycle de vie d'un composant Angular,
 // qui est exécutée après que le constructeur a terminé l'initialisation de l'objet.
 
