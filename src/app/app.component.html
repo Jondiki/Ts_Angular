@@ -10,6 +10,7 @@
 
 <h1 *ngIf="isVisible">{{gameOne.name}} {{gameOne.year}}</h1>
 <ns-races></ns-races>
+
 <div class="mybox">
   @for ( equipes of teams; track equipes.title){
 <ns-team [myTeam]="equipes"/>

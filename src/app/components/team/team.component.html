@@ -4,7 +4,7 @@
 <!-- <h1>{{title}} number : {{number}}</h1> -->
 <div class="cup">
   <!-- <img [src]="imageUrl" > -->
-  <input type="text"  [(ngModel)]="myTeam.title ">
+  <input type="text"  [(ngModel)]="myTeam.title">
 
 </div>
 <!-- /event binding -->
@@ -12,7 +12,7 @@
 <p><button (click)="onLike()"> {{likeButtonText}}</button> {{myTeam.like}}</p>
 
 
-@if ( likeButtonText === 'Unlike') {
+@if ( myTeam.like === 1 || likeButtonText === 'Unlike') {
 <p [ngStyle]= "{'color': 'red' }" >Liked!</p>
 
 }

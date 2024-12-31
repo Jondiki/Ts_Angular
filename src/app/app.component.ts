@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { CommonModule, TitleCasePipe, UpperCasePipe } from '@angular/common';
+import { CommonModule, CurrencyPipe, DatePipe, DecimalPipe, PercentPipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { RacesComponent } from './components/races/races.component';
 import { TeamComponent } from './components/team/team.component';
 import { Team } from './models/team';
@@ -14,7 +14,8 @@ bootstrapApplication(RacesComponent)
 @Component({
   selector: 'ns-root',
   standalone: true,
-  imports: [RacesComponent, CommonModule, TeamComponent, TitleCasePipe, UpperCasePipe],
+  imports: [RacesComponent, CommonModule, TeamComponent,
+   DecimalPipe, PercentPipe, CurrencyPipe,  TitleCasePipe, UpperCasePipe, DatePipe],
   templateUrl: "./app.component.html",
   styleUrl: './app.component.css'
 })
@@ -37,13 +38,13 @@ export class AppComponent {
 
 
   teams!: Team[];
-  team1!: Team;
-  team2!: Team;
+  // team1!: Team;
+  // team2!: Team;
 
   ngOnInit(): void {
     this.teams = [
       new Team(
-        'Usa-Team',
+        'Thiery-Team',
         'description: string',
         27,
         0,
