@@ -1,19 +1,20 @@
-<p>team works!</p>
-
 
 <h1>{{myTeam.title | titlecase }}</h1>
+<p>{{myTeam.price | number: '1.0-0' }} points</p>
 <!-- <h1>{{title}} number : {{number}}</h1> -->
 <div class="cup">
   <!-- <img [src]="imageUrl" > -->
   <input type="text"  [(ngModel)]="myTeam.title ">
+
 </div>
 <!-- /event binding -->
 
 <p><button (click)="onLike()"> {{likeButtonText}}</button> {{myTeam.like}}</p>
 
-@if ( likeButtonText === 'Unlike') {
 
-  <p>  Liked</p>
+@if ( likeButtonText === 'Unlike') {
+<p [ngStyle]= "{'color': 'red' }" >Liked!</p>
+
 }
 
- <!-- <div *[ngStyle]= "{color': redcolor }" >Liked!</div> -->
+

@@ -4,7 +4,8 @@ export class Team{
   public description: string,
   public number : number,
   public like : number,
-    public imageUrl: string) {
+    public imageUrl: string,
+  public price?:number) {
 
   }
 
