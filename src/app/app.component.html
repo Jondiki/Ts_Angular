@@ -6,18 +6,12 @@
   <title>Document</title>
 </head>
 <body>
+<mat-slide-toggle>Toggle me!</mat-slide-toggle>
+<ns-header></ns-header>
+<!-- <ns-races></ns-races> -->
+<ns-team-list></ns-team-list>
 
 
-<h1 *ngIf="isVisible">{{gameOne.name}} {{gameOne.year}}</h1>
-<ns-races></ns-races>
-
-<div class="mybox">
-  @for ( equipes of teams; track equipes.title){
-<ns-team [myTeam]="equipes"/>
-}
-
-
-</div>
 </body>
 </html>
 

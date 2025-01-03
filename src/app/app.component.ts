@@ -3,19 +3,18 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { CommonModule, CurrencyPipe, DatePipe, DecimalPipe, PercentPipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { RacesComponent } from './components/races/races.component';
 import { TeamComponent } from './components/team/team.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { Team } from './models/team';
-type Game = {
-  name: string;
-  year: number;
+import { TeamListComponent } from './components/team-list/team-list.component';
+import { HeaderComponent } from './components/header/header.component';
 
-}
 bootstrapApplication(RacesComponent)
   .catch((err) => console.error(err));
 @Component({
   selector: 'ns-root',
   standalone: true,
-  imports: [RacesComponent, CommonModule, TeamComponent,
-   DecimalPipe, PercentPipe, CurrencyPipe,  TitleCasePipe, UpperCasePipe, DatePipe],
+  imports: [ MatSlideToggleModule,RacesComponent, CommonModule, HeaderComponent, TeamListComponent,
+    DecimalPipe, PercentPipe, CurrencyPipe, TitleCasePipe, UpperCasePipe, DatePipe],
   templateUrl: "./app.component.html",
   styleUrl: './app.component.css'
 })
@@ -24,43 +23,7 @@ bootstrapApplication(RacesComponent)
 
 export class AppComponent {
 
-  gameOne: Game =
-    {
-      name: "Olympic Game",
-      year: 2024,
-    }
-  isVisible: boolean = true;
 
-
-
-
-
-
-
-  teams!: Team[];
-  // team1!: Team;
-  // team2!: Team;
-
-  ngOnInit(): void {
-    this.teams = [
-      new Team(
-        'Thiery-Team',
-        'description: string',
-        27,
-        0,
-        '../assets/images/win.jpg',
-      770.77),
-
-      new Team
-        (
-          'Spain-Team',
-          'description: string',
-          27,
-          0,
-          'https://media.istockphoto.com/id/515379862/fr/photo/en-ligne-de-sant%C3%A9-dentaire-formulaire-de-r%C3%A9clamation.jpg?s=1024x1024&w=is&k=20&c=rerGruZC4e3DpUD2D6K1N9B0cEqxd5glR0i9DirRrcY=',
-        790.09)
-    ];
-}
 
 
 

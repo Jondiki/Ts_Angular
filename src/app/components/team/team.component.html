@@ -1,6 +1,8 @@
 
-<h1>{{myTeam.title | titlecase }}</h1>
-<p>{{myTeam.price | number: '1.0-0' }} points</p>
+
+<div class="team-card" [ngClass]="{liked : !userHasLiked }"  >
+<h1>{{myTeam.title | uppercase }}</h1>
+<p>{{myTeam.price | number : '1.0-0'  }} points</p>
 <!-- <h1>{{title}} number : {{number}}</h1> -->
 <div class="cup">
   <!-- <img [src]="imageUrl" > -->
@@ -11,9 +13,9 @@
 
 <p><button (click)="onLike()"> {{likeButtonText}}</button> {{myTeam.like}}</p>
 
-
+</div>
 @if ( myTeam.like === 1 || likeButtonText === 'Unlike') {
-<p [ngStyle]= "{'color': 'red' }" >Liked!</p>
+<p [ngStyle]= "{color : 'rgb(0,'+ myTeam.like + ',8)' }" >Liked!</p>
 
 }
 

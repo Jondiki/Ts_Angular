@@ -1,12 +1,12 @@
 import { Component,Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { NgClass, NgStyle, UpperCasePipe, TitleCasePipe ,DecimalPipe} from '@angular/common';
+import { NgClass, NgStyle, UpperCasePipe, TitleCasePipe ,DecimalPipe, CurrencyPipe} from '@angular/common';
 import { Team } from '../../models/team';
 
 @Component({
   selector: 'ns-team',
   standalone: true,
-  imports: [FormsModule, NgClass, NgStyle, TitleCasePipe, UpperCasePipe, DecimalPipe],
+  imports: [FormsModule, NgClass, NgStyle, TitleCasePipe, UpperCasePipe, DecimalPipe, CurrencyPipe, ],
   templateUrl: './team.component.html',
   styleUrl: './team.component.css'
 
