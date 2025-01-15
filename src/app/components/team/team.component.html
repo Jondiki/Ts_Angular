@@ -1,0 +1,28 @@
+
+
+<div class="team-card" [ngClass]="{liked : !userHasLiked }"  >
+<h1>{{myTeam.title | uppercase }}-TEAM</h1>
+<p>{{myTeam.price | number : '1.0-0'  }} points</p>
+
+
+<!-- <h1>{{title}} number : {{number}}</h1> -->
+<div class="cup">
+  <!-- <img [src]="imageUrl" > -->
+  <input type="text"  [(ngModel)]="myTeam.title">
+
+</div>
+<!-- /event binding -->
+
+<p><button (click)="onLike()"> {{likeButtonText}}</button> {{myTeam.like}}</p>
+
+</div>
+@if ( myTeam.like === 1 || likeButtonText === 'Unlike') {
+<p [ngStyle]= "{color : 'rgb(0,'+ myTeam.like + ',8)' }" >Liked!</p>
+
+}
+
+
+<!-- @if (myTeam.location)
+{
+  <p>Location : {{myTeam.location}}</p>
+} -->
