@@ -15,7 +15,7 @@ export class HeaderComponent {
   gameOne = signal <Game>(
     {
       name: "Olympic Game",
-      year: 2028,
+      year: 28,
     } )
   isVisible = signal(true);
 
