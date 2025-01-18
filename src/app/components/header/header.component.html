@@ -1,0 +1,10 @@
+
+<header><h1 *ngIf="isVisible()">{{gameOne().name}} {{gameOne().year}}</h1>
+  <button mat-fab extended>Add Team</button>
+  <div class="img" src=""></div>
+
+</header>
+  <nav class="navigation">
+  <a [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact :true}"  >Home</a>
+  <a [routerLink]="['/teams']" routerLinkActive="active" >Teams</a>
+</nav>
