@@ -4,11 +4,10 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 @Component({
-  selector: 'ns-header',
-  standalone: true,
-  imports: [CommonModule,MatButtonModule,RouterLink,RouterLinkActive],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+    selector: 'ns-header',
+    imports: [CommonModule, MatButtonModule, RouterLink, RouterLinkActive],
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.scss'
 })
 
 export class HeaderComponent {
