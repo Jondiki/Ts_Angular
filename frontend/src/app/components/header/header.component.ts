@@ -1,11 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { Game } from '../../models/game'
 import { CommonModule } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 @Component({
     selector: 'ns-header',
-    imports: [CommonModule, MatButtonModule, RouterLink, RouterLinkActive],
+    imports: [CommonModule, RouterLink, RouterLinkActive],
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss'
 })
