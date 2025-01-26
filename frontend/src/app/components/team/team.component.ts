@@ -4,10 +4,12 @@ import { NgClass, NgStyle, UpperCasePipe, TitleCasePipe ,DecimalPipe, CurrencyPi
 import { Team } from '../../models/team';
 
 @Component({
-    selector: 'ns-team',
+  selector: 'ns-team',
+  standalone: true,
+
     imports: [FormsModule, NgClass, NgStyle, UpperCasePipe, DecimalPipe],
     templateUrl: './team.component.html',
-    styleUrl: './team.component.css'
+    styleUrl: './team.component.scss'
 })
 export class TeamComponent implements OnInit {
 

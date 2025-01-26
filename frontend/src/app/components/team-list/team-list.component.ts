@@ -5,7 +5,9 @@ import { TeamComponent } from '../team/team.component';
 import { TeamsService } from '../../services/teams-service';
 import 'animate.css';
 @Component({
-    selector: 'ns-team-list',
+  selector: 'ns-team-list',
+  standalone: true,
+
     imports: [TeamComponent, CommonModule,],
     templateUrl: './team-list.component.html',
     styleUrl: './team-list.component.css'

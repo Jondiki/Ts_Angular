@@ -3,7 +3,7 @@ export class Team {
   id: string;
   constructor(public title: string,
     public description: string,
-    public number: number,
+    public num: number,
     public like: number,
     public imageUrl: string,
     public price?: number)

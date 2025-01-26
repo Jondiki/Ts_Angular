@@ -9,8 +9,8 @@ bootstrapApplication(RacesComponent)
   .catch((err) => console.error(err));
 @Component({
     selector: 'ns-root',
-    imports: [RouterOutlet, CommonModule, HeaderComponent
-        ],
+  standalone: true,
+    imports: [RouterOutlet, CommonModule, HeaderComponent],
     templateUrl: "./app.component.html",
     styleUrl: './app.component.css'
 })

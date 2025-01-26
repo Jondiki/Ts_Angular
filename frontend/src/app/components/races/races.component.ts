@@ -4,8 +4,10 @@ import { CommonModule, DatePipe, PercentPipe } from '@angular/common';
 
 type RaceModel = any;
 @Component({
-    selector: 'ns-races',
-    imports: [FormsModule, DatePipe, PercentPipe],
+  selector: 'ns-races',
+  standalone: true,
+
+  imports: [CommonModule,FormsModule, DatePipe, PercentPipe],
     templateUrl: "./races.component.html",
     styleUrl: './races.component.css'
 })

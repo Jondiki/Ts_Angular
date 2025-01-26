@@ -1,0 +1,54 @@
+
+ button
+{
+  border: none;
+  font-size: 15px;
+  margin: 0 10px;
+  border-radius: 5px;
+  width:105px;
+  padding: 10px;
+  margin: 1;
+  border: solid rgba(255, 255, 255, 0.233) 2.3px ;
+  color: #f0f0f0;
+  background-color: #1e3274de;
+  text-decoration: none;
+  &:hover {
+    //text-decoration: underline;
+    color: #ffffff;
+    background-color: #45b5ffde;
+  }
+}
+.formulaire
+{
+color: aliceblue;
+  text-align: center;
+  padding: 25px;
+  width: 300px;
+  height: 100%;
+  position: center;
+  margin: 25px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to right, rgba(23, 21, 31, 0.89), rgba(39, 0, 15, 0.877));
+}
+input
+{
+  border-radius: 50px ;
+  border: none;
+  background-color: rgba(240, 248, 255, 0.685);
+}
+
+.ng-dirty.ng-invalid, .ng-touched.ng-invalid{
+  border-color:  red;
+  border-width: 1px;
+}
+
+.error
+{
+  color: rgb(255, 0, 0);
+}

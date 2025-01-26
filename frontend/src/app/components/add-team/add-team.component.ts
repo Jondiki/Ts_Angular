@@ -1,43 +1,27 @@
-import { Component, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { FormsModule } from '@angular/forms';
+import { Component } from '@angular/core';
+import { Team } from '../../models/team';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-add-team',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule,
-    FormsModule, ReactiveFormsModule],
+  selector: 'ns-add-team',
+  standalone :true,
+  imports: [ReactiveFormsModule],
   templateUrl: './add-team.component.html',
-  styleUrls: ['./add-team.component.css']
+  styleUrl: './add-team.component.scss'
 })
 export class AddTeamComponent {
-  teamForm: FormGroup;
 
-  constructor(
-    public dialogRef: MatDialogRef<AddTeamComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any,
-    private fb: FormBuilder
-  ) {
-    this.teamForm = this.fb.group({
-      title: ['', [Validators.required]],
-      description: ['', [Validators.required]],
-      imageUrl: ['', [Validators.required]],
-      likes: [0]
-    });
+  formGroup = new FormGroup({
+    titre : new FormControl('', [Validators.required]),
+    price :new FormControl(0, [Validators.required, Validators.min(1), Validators.max(1000)])
+
   }
 
-  onSave(): void {
-    if (this.teamForm.valid) {
-      this.dialogRef.close(this.teamForm.value);
-    }
-  }
+  );
 
-  onCancel(): void {
-    this.dialogRef.close(null);
+
+  submit(event: Event) {
+    event.preventDefault();
+    // console.log(this.titre.value)
   }
 }
