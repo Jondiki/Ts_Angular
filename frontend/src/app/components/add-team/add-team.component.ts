@@ -22,6 +22,6 @@ export class AddTeamComponent {
 
   submit(event: Event) {
     event.preventDefault();
-    // console.log(this.titre.value)
+    console.log(this.formGroup.get('titre')?.value)
   }
 }
