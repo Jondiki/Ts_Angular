@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Team } from '../../models/team';
+import { TeamsService } from '../../services/teams-service';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
@@ -10,6 +11,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrl: './add-team.component.scss'
 })
 export class AddTeamComponent {
+  constructor(private teamsService: TeamsService) { }
 
   formGroup = new FormGroup({
     titre : new FormControl('', [Validators.required]),
@@ -22,6 +24,12 @@ export class AddTeamComponent {
 
   submit(event: Event) {
     event.preventDefault();
+
+    const titre = this.formGroup.get('titre')?.value ?? '';
+    const price = this.formGroup.get('price')?.value ?? 0
+
+    const newTeam = new Team(titre, 'description: string', 27, 0, '../assets/images/win.jpg', price);
+    this.teamsService.addTeam(newTeam);
     console.log(this.formGroup.get('titre')?.value)
   }
 }

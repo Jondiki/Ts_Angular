@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Team } from '../models/team'
+import { Team } from '../models/team';
+
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +22,9 @@ export class TeamsService {
 
   getTeam(): Team[]{
     return [...this.teams];
+  }
+
+  addTeam(team: Team) {
+    this.teams.unshift(team);
   }
 }

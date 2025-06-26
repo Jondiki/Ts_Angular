@@ -5,6 +5,7 @@
 
 </header>
   <nav class="navigation">
-  <a [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact :true}"  >Home</a>
-  <a [routerLink]="['/teams']" routerLinkActive="active" >Teams</a>
+  <a  [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact :true}" (click)="start()">Home</a>
+  <a [routerLink]="['/teams']" routerLinkActive="active"  (click)="stop()" >Teams</a>
+
 </nav>
