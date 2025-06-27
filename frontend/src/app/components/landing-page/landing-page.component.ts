@@ -13,7 +13,7 @@ export class LandingPageComponent {
   constructor(private router: Router) { }
     onContinue()
     {
-      this.router.navigateByUrl("teams")
+      this.router.navigateByUrl("tablist")
       console.info("hello");
   }
 

@@ -5,3 +5,12 @@
   img {
     width: 100%;
   }
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5b1;
+  background: radial-gradient(circle,
+  rgb(255, 255, 255),
+  rgb(255, 255, 255),
+  rgba(189, 189, 189, 0.877)
+);}

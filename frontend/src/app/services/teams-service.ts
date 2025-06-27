@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Team } from '../models/team';
+import { BehaviorSubject } from 'rxjs';
 
 
 @Injectable({
@@ -20,11 +21,31 @@ export class TeamsService {
 
   ];
 
-  getTeam(): Team[]{
+  // getTeam(): Team[]{
+  //   return [...this.teams];
+  // }
+
+  // addTeam(team: Team) {
+  //   this.teams.unshift(team);
+  // }
+
+  // ✅ Ajout de BehaviorSubject
+  private teamsSubject = new BehaviorSubject<Team[]>([...this.teams]);
+
+  // ✅ Observable à exposer
+  public teams$ = this.teamsSubject.asObservable();
+
+  getTeam(): Team[] {
     return [...this.teams];
   }
 
   addTeam(team: Team) {
     this.teams.unshift(team);
+    this.teamsSubject.next([...this.teams]); // met à jour les abonnés
   }
+
+  deleteTeam(title: string) {
+    this.teams = this.teams.filter(team => team.title !== title);
+    this.teamsSubject.next([...this.teams]);
+    }
 }
