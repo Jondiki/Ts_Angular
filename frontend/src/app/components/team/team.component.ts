@@ -2,6 +2,8 @@ import { Component,Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgClass, NgStyle, UpperCasePipe, TitleCasePipe ,DecimalPipe, CurrencyPipe} from '@angular/common';
 import { Team } from '../../models/team';
+import { TeamsService } from '../../services/teams-service';
+
 
 @Component({
   selector: 'ns-team',
@@ -12,6 +14,8 @@ import { Team } from '../../models/team';
     styleUrl: './team.component.scss'
 })
 export class TeamComponent implements OnInit {
+
+  constructor(private teamsService: TeamsService) { }
 
   @Input() myTeam !: Team;  // variable à injecter
   likeButtonText!: string;
@@ -24,6 +28,8 @@ export class TeamComponent implements OnInit {
   {
     this.likeButtonText = "Like"
     this.userHasLiked = true;
+
+
   }
 
 
@@ -40,6 +46,11 @@ export class TeamComponent implements OnInit {
       this.likeButtonText = "Like"
       this.userHasLiked = true;
       }
+  }
+
+
+  deleteTeam(): void {
+    this.teamsService.deleteTeam(this.myTeam.title);
   }
 
 

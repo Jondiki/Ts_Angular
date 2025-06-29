@@ -1,0 +1,25 @@
+<div class="table">
+  <table class="team-table">
+  <thead class="table-header">
+    <tr>
+      <th>Nom</th>
+      <th>Prix</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (team of teams; track team.title) {
+      <tr>
+        <td>{{ team.title }}</td>
+        <td>{{ team.price }}</td>
+
+        <td class="no-border">
+          <button (click)="deleteTeam(team.title)" >Supprimer</button>    </td>
+      </tr>
+    }
+  </tbody>
+</table>
+<button>
+  Extraire les équipes
+  <span class="material-icons">download</span>
+</button>
+</div>

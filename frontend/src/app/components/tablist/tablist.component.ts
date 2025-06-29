@@ -1,8 +1,9 @@
 
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Team } from '../models/team';
-import { TeamsService } from '../services/teams-service';
+import { Team } from '../../models/team';
+import { TeamComponent } from '../team/team.component';
+import { TeamsService } from '../../services/teams-service';
 
 @Component({
   selector: 'ns-tablist',
@@ -15,11 +16,18 @@ import { TeamsService } from '../services/teams-service';
 export class TablistComponent implements OnInit {
   teams: Team[] = [];
 
-  constructor(private teamService: TeamsService) {}
+  constructor(private teamsService: TeamsService) {}
 
   ngOnInit(): void {
-    this.teamService.teams$.subscribe((teams) => {
+    this.teamsService.teams$.subscribe((teams) => {
       this.teams = teams;
     });
+
+
+
+
+  }
+  deleteTeam(title: string): void {
+    this.teamsService.deleteTeam(title);
   }
 }

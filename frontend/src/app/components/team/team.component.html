@@ -14,7 +14,7 @@
 <!-- /event binding -->
 <p><button (click)="onLike()"> {{likeButtonText}}</button> {{myTeam.like}}</p>
 
-<!-- <p><button (click)="onDelete()">x</button> </p> -->
+<p><button  (click)="deleteTeam()" >Supprimer</button> </p>
 
 </div>
 @if ( myTeam.like === 1 || likeButtonText === 'Unlike') {

@@ -1,5 +1,15 @@
+
+.table
+{
+    justify-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  padding: 0%;
+}
 .team-table {
-  width: 100%;
+
+  width: 70%;
   border-collapse: collapse;
   margin-top: 20px;
 }
@@ -15,4 +25,11 @@
 }
 .team-table tr:nth-child(even) {
   background-color: #f9f9f9;
+}
+.team-table th{
+  background-color: #82b3e1;
+}
+.no-border {
+  border: white;
+  ;
 }
