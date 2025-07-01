@@ -3,7 +3,7 @@
     <thead class="table-header">
       <tr>
         <th>Nom</th>
-        <th>Prix</th>
+        <th>Points</th>
       </tr>
     </thead>
     <tbody>
@@ -12,14 +12,13 @@
           <td>{{ team.title }}</td>
           <td>{{ team.price }}</td>
           <td class="no-border">
-            <button (click)="deleteTeam(team.title)">Supprimer</button>
+            <button class="delb" (click)="deleteTeam(team.title)">Delete</button>
           </td>
         </tr>
       }
     </tbody>
   </table>
-  <button (click)="exportToExcel()">
-    Extraire les équipes
-    <span class="material-icons">download</span>
+  <button (click)="exportToPDF()">
+    Extraire les équipes en Pdf
   </button>
 </div>

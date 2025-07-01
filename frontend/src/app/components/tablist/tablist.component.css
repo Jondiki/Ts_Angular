@@ -29,7 +29,21 @@
 .team-table th{
   background-color: #82b3e1;
 }
-.no-border {
-  border: white;
-  ;
+
+
+.delb {
+  background-color: #dba4b8a8;
+  color: rgb(46, 46, 46);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.5s;
+  font-size: 13px;
+
+}
+.delb:hover{
+  transition: 0.5s;
+  color: white;
+  background-color:  #bb0d4ab9;
 }
