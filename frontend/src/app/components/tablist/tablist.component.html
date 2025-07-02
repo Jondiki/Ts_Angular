@@ -1,0 +1,24 @@
+<div class="table">
+  <table class="team-table">
+    <thead class="table-header">
+      <tr>
+        <th>Nom</th>
+        <th>Points</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (team of teams; track team.title) {
+        <tr>
+          <td>{{ team.title }}</td>
+          <td>{{ team.price }}</td>
+          <td class="no-border">
+            <button class="delb" (click)="deleteTeam(team.title)">Delete</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+  <button (click)="exportToPDF()">
+    Extraire les équipes en Pdf
+  </button>
+</div>

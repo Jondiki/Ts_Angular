@@ -1,0 +1,19 @@
+<form class="form" [formGroup]="formGroup" (submit)="submit($event)">
+  <div class="formulaire  animate__animated animate__backInUp">
+  <h2 style="color: rgba(182, 182, 211, 0.822);"> Ajoutez une équipe</h2>
+  <div class="">
+    <label for="titre">Team's name : </label>
+    <input id="name" name="titre"  type="text" formControlName="titre">
+    @if(formGroup.get('titre')?.invalid && (formGroup.get('titre')?.dirty || formGroup.get('titre')?.touched)){
+    <div class="error">  Name is required!</div>
+    }
+<label for="price">Team's points : </label>
+        <input id="price" name="price"  type="number" formControlName="price">
+    @if(formGroup.get('price')?.invalid && (formGroup.get('price')?.dirty || formGroup.get('price')?.touched)){
+    <div class="error"> Price is required!</div>
+    }
+  </div>
+
+ <button type="submit"  [disabled]="formGroup.invalid">Save</button>
+ </div>
+</form>

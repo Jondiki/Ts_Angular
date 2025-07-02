@@ -1,0 +1,12 @@
+
+<header><h1 *ngIf="isVisible()">{{gameOne().name}} {{gameOne().year}}</h1>
+  <button (click)="addTeam()">Add Team</button>
+  <div class="img" src=""></div>
+
+</header>
+  <nav class="navigation">
+  <a  [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact :true}" (click)="start()">Home</a>
+  <a [routerLink]="['/teams']" routerLinkActive="active"  (click)="stop()" >Teams</a>
+  <a [routerLink]="['/tablist']" routerLinkActive="active"   >Table</a>
+
+</nav>
