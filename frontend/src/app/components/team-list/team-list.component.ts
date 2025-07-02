@@ -1,3 +1,4 @@
+import { interval } from 'rxjs';
 import { Component, Input, OnInit } from '@angular/core';
 import { Team } from '../../models/team'
 import {CommonModule } from '@angular/common';
@@ -24,6 +25,11 @@ export class TeamListComponent implements OnInit {
     this.teamsService.teams$.subscribe((teams) => {
       this.teams = teams;
     });
+
+    const interval$ = interval(1000);
+    interval$.subscribe(value => console.log(value))
+
+    setTimeout(() => interval$.subscribe(value => console.log(value)), 5000);
   }
 
 
