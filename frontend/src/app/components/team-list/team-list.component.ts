@@ -1,5 +1,5 @@
 import { interval, Observable, ObservableLike } from 'rxjs';
-import {map } from 'rxjs/operators';
+import {filter, map, tap } from 'rxjs/operators';
 import { Component, Input, OnInit } from '@angular/core';
 import { Team } from '../../models/team'
 import {CommonModule } from '@angular/common';
@@ -28,16 +28,24 @@ export class TeamListComponent implements OnInit {
     });
 
     this.interval$ = interval(1000).pipe(
+      //filter les emissions avec filter   
+      filter(value => value % 3 == 0),
+      //transfomer les emissions avec map
       map(value => value % 2 === 0 ?
-        `je suis ${value} paire`:
+        `je suis ${value} paire` :
         `je suis ${value} impaire`
-     ) );  
+      ), 
+    
+    tap(text => this.logger(text))
+    );  
     
     // this.interval$.subscribe(value => console.log(value))
     // setTimeout(() => this.interval$.subscribe(value => console.log(value)), 5000);
-   
- 
- 
+
+  }
+
+  logger(text: string) {
+    console.log(`log : ${text}`);
   }
 
 
