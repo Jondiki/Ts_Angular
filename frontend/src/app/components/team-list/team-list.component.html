@@ -1,10 +1,12 @@
 <div class="input-container">
+  <h1>{{interval$ | async }}</h1>
     <input type="text" placeholder="Recherche :"/>
   </div>
   
 <div class="team-list animate__animated animate__backInUp">
 
-  @for ( equipes of teams; track equipes.title){
+  @for ( equipes of teams; track equipes.title)
+  {
 <ns-team [myTeam]="equipes"/>
 }
 
