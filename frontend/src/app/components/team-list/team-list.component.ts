@@ -28,17 +28,17 @@ export class TeamListComponent implements OnInit {
     });
 
     this.interval$ = interval(1000).pipe(
-      //filter les emissions avec filter   
+      //filter les emissions avec filter
       filter(value => value % 3 == 0),
       //transfomer les emissions avec map
       map(value => value % 2 === 0 ?
         `je suis ${value} paire` :
         `je suis ${value} impaire`
-      ), 
-    
-    tap(text => this.logger(text))
-    );  
-    
+      ),
+
+    // tap(text => this.logger(text))
+    );
+
     // this.interval$.subscribe(value => console.log(value))
     // setTimeout(() => this.interval$.subscribe(value => console.log(value)), 5000);
 
