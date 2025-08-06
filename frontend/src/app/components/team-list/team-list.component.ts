@@ -17,6 +17,9 @@ import 'animate.css';
 export class TeamListComponent implements OnInit {
 
   interval$!: Observable<string>;
+  monInterval$ !: Observable<number>;
+
+  
   teams!: Team[];
   constructor(private teamsService: TeamsService) {
 
@@ -35,17 +38,25 @@ export class TeamListComponent implements OnInit {
         `je suis ${value} paire` :
         `je suis ${value} impaire`
       ),
-
     // tap(text => this.logger(text))
     );
-
     // this.interval$.subscribe(value => console.log(value))
     // setTimeout(() => this.interval$.subscribe(value => console.log(value)), 5000);
 
+
+    this.monInterval$ = interval(2000).pipe(
+      filter(value => value % 2 == 0),
+      tap(num => this.logger(num))
+    );
   }
 
-  logger(text: string) {
-    console.log(`log : ${text}`);
+
+
+
+  
+  logger(text: number) {
+    // console.log(`log : ${text}`);  pareil
+    console.log(`log : `, text);
   }
 
 

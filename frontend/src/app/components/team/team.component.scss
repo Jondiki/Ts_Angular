@@ -10,18 +10,19 @@
   width: 300px;
   height: 220px;
   background-color: rgba(0, 218, 109, 0.699);
-  border-radius: 30px;
+  // border-radius: 30px;
+  border-radius: 20px;
   box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.129);
   background: linear-gradient(rgba(255, 220, 156, 0.774), rgba(228, 200, 139, 0.808)), url(../../assets/images/win.jpg);
   transition: 0.3s;
   /* background-image: url(../../assets/images/win.jpg); */
-  margin: 20px;
+  margin: 5px;
 
 }
 
 .team-card:hover
 {
-    background: linear-gradient(rgba(255, 34, 100, 0.822), rgba(150, 0, 82, 0.849)),
+    background: linear-gradient(rgba(255, 34, 100, 0.822), rgba(73, 0, 40, 0.918)),
               url(../../assets/images/win.jpg);
               width: 310px;
               transition: 0.5s;
@@ -43,7 +44,7 @@ input:hover
 }
 .liked
 {
-    background: linear-gradient(rgba(44, 206, 255, 0.836), rgba(0, 105, 204, 0.7)),
+    background: linear-gradient(rgba(77, 175, 255, 0.856), rgba(0, 49, 95, 0.7)),
               url(../../assets/images/win.jpg);
 }
      img {

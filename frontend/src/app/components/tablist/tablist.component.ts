@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Team } from '../../models/team';
 import { TeamComponent } from '../team/team.component';
@@ -27,6 +27,9 @@ export class TablistComponent implements OnInit {
     });
 
   }
+  // ngOnDestroy(): void {
+  //   this.teamsService.teams$.unsubscribe();
+  // }
   deleteTeam(title: string): void {
     this.teamsService.deleteTeam(title);
   }
@@ -66,7 +69,7 @@ export class TablistComponent implements OnInit {
       team.title ?? '',
       team.price ?? 0
     ]);
-    
+
 
     // Générer le tableau
     autoTable(doc, {

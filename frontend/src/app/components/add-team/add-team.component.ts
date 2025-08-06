@@ -23,7 +23,7 @@ export class AddTeamComponent {
 
 
   submit(event: Event) {
-    event.preventDefault();
+    // event.preventDefault();
 
     const titre = this.formGroup.get('titre')?.value ?? '';
     const price = this.formGroup.get('price')?.value ?? 0
