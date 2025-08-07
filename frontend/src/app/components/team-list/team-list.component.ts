@@ -1,6 +1,8 @@
 import { interval, Observable, ObservableLike } from 'rxjs';
-import {filter, map, tap } from 'rxjs/operators';
+import { filter, debounceTime, distinctUntilChanged, map, switchMap, tap } from 'rxjs/operators';
 import { Component, Input, OnInit } from '@angular/core';
+
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { Team } from '../../models/team'
 import {CommonModule } from '@angular/common';
 import { TeamComponent } from '../team/team.component';
@@ -19,7 +21,7 @@ export class TeamListComponent implements OnInit {
   interval$!: Observable<string>;
   monInterval$ !: Observable<number>;
 
-  
+
   teams!: Team[];
   constructor(private teamsService: TeamsService) {
 
@@ -53,7 +55,7 @@ export class TeamListComponent implements OnInit {
 
 
 
-  
+
   logger(text: number) {
     // console.log(`log : ${text}`);  pareil
     console.log(`log : `, text);
