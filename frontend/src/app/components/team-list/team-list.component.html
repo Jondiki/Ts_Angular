@@ -1,12 +1,12 @@
 <div class="input-container">
   <h1>{{interval$ | async }}</h1>
   <h1>{{monInterval$ | async }}</h1>
-    <input [formControl]="seachINput" placeholder="Recherche :"/>
+    <input [formControl]="searchInput" type="text" placeholder="Recherche :"/>
   </div>
 
 <div class="team-list animate__animated animate__backInUp">
 
-  @for ( equipes of teams; track equipes.title)
+  @for ( equipes of filteredTeams; track equipes.title)
   {
 <ns-team [myTeam]="equipes"/>
 }

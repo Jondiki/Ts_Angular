@@ -12,7 +12,7 @@ import 'animate.css';
   selector: 'ns-team-list',
   standalone: true,
 
-    imports: [TeamComponent, CommonModule,],
+    imports: [TeamComponent, CommonModule, ReactiveFormsModule],
     templateUrl: './team-list.component.html',
     styleUrl: './team-list.component.css'
 })
@@ -23,6 +23,11 @@ export class TeamListComponent implements OnInit {
 
 
   teams!: Team[];
+  filteredTeams!: Team[];
+
+  searchInput = new FormControl();
+
+
   constructor(private teamsService: TeamsService) {
 
   }
@@ -30,6 +35,7 @@ export class TeamListComponent implements OnInit {
   ngOnInit(): void {
     this.teamsService.teams$.subscribe((teams) => {
       this.teams = teams;
+      this.filteredTeams = teams;
     });
 
     this.interval$ = interval(1000).pipe(
@@ -49,6 +55,19 @@ export class TeamListComponent implements OnInit {
     this.monInterval$ = interval(2000).pipe(
       filter(value => value % 2 == 0),
       tap(num => this.logger(num))
+    );
+
+
+
+    this.searchInput.valueChanges.pipe(
+      debounceTime(400),
+      distinctUntilChanged(),
+      map(searchTerm => searchTerm?.toLowerCase() || ''),
+      map(searchTerm => this.teams.filter(team => team.title.toLowerCase().includes(searchTerm)))
+    ).subscribe(filtered => {
+      this.filteredTeams = filtered;
+    }
+
     );
   }
 
