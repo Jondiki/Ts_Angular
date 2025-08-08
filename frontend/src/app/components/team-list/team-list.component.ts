@@ -60,7 +60,7 @@ export class TeamListComponent implements OnInit {
 
 
     this.searchInput.valueChanges.pipe(
-      debounceTime(400),
+      debounceTime(300),
       distinctUntilChanged(),
       map(searchTerm => searchTerm?.toLowerCase() || ''),
       map(searchTerm => this.teams.filter(team => team.title.toLowerCase().includes(searchTerm)))
@@ -69,6 +69,12 @@ export class TeamListComponent implements OnInit {
     }
 
     );
+
+
+
+
+
+
   }
 
 
@@ -79,6 +85,11 @@ export class TeamListComponent implements OnInit {
     // console.log(`log : ${text}`);  pareil
     console.log(`log : `, text);
   }
+
+
+
+
+
 
 
 
