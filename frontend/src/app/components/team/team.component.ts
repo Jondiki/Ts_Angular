@@ -28,7 +28,8 @@ export class TeamComponent implements OnInit {
 
   // ngOnInit(): void
   // {
-
+//     this.likeButtonText = "Like"
+// this.userHasLiked = true;
   // }
 
 
