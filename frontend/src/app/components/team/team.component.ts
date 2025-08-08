@@ -33,8 +33,8 @@ export class TeamComponent implements OnInit {
   // }
 
 
-  redTrainsCalled = 0;
-  yellowTrainsCalled = 0;
+  redTrainsCalled:number = 0;
+  yellowTrainsCalled:number = 0;
 
   ngOnInit() {
     this.likeButtonText = "Like"
