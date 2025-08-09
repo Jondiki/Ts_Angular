@@ -1,5 +1,5 @@
 import { interval, Observable, ObservableLike } from 'rxjs';
-import { filter, debounceTime, distinctUntilChanged, map, switchMap, tap } from 'rxjs/operators';
+import { filter, take,debounceTime, distinctUntilChanged, map, switchMap, tap } from 'rxjs/operators';
 import { Component, Input, OnInit } from '@angular/core';
 
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
@@ -25,6 +25,7 @@ export class TeamListComponent implements OnInit {
   teams!: Team[];
   filteredTeams!: Team[];
 
+  // searchInput = document.getElementById("searchInput") as HTMLInputElement;
   searchInput = new FormControl();
 
 
@@ -60,6 +61,7 @@ export class TeamListComponent implements OnInit {
 
 
     this.searchInput.valueChanges.pipe(
+      take(2),
       debounceTime(300),
       distinctUntilChanged(),
       map(searchTerm => searchTerm?.toLowerCase() || ''),
