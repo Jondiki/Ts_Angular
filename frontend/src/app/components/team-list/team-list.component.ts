@@ -61,7 +61,6 @@ export class TeamListComponent implements OnInit {
 
 
     this.searchInput.valueChanges.pipe(
-      take(2),
       debounceTime(300),
       distinctUntilChanged(),
       map(searchTerm => searchTerm?.toLowerCase() || ''),

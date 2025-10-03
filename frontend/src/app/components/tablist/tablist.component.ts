@@ -8,10 +8,11 @@ import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
+import { CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
 @Component({
   selector: 'ns-tablist',
   standalone: true,
-  imports: [CommonModule],
+  imports: [ CommonModule],
   // Note: 'styleUrl' should be 'styleUrls' (plural) in Angular
   templateUrl: './tablist.component.html',
   styleUrl: './tablist.component.css'
@@ -80,4 +81,5 @@ export class TablistComponent implements OnInit {
     // Sauvegarder le fichier
     doc.save('equipes.pdf');
   }
+ 
 }

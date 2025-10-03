@@ -1,6 +1,6 @@
 
 
-<div class="team-card" [ngClass]="{liked : !userHasLiked }"  >
+<div class="team-card" [ngClass]="{liked : !userHasLiked }"  cdkDrag>
 <h1>{{myTeam.title | uppercase }}-TEAM</h1>
 <p>{{myTeam.price | number : '1.0-0'  }} points</p>
 

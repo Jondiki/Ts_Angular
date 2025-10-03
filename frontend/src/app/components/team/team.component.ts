@@ -1,5 +1,6 @@
 import { Component,Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CdkDrag } from '@angular/cdk/drag-drop';
 import { NgClass, NgStyle, UpperCasePipe, TitleCasePipe ,DecimalPipe, CurrencyPipe} from '@angular/common';
 import { Team } from '../../models/team';
 import { TeamsService } from '../../services/teams-service';
@@ -10,10 +11,9 @@ import { concatMap, mergeMap, delay, exhaustMap, map, switchMap, take, tap } fro
 @Component({
   selector: 'ns-team',
   standalone: true,
-
-    imports: [FormsModule, NgClass, NgStyle, UpperCasePipe, DecimalPipe],
-    templateUrl: './team.component.html',
-    styleUrl: './team.component.scss'
+  imports: [CdkDrag,FormsModule, NgClass, NgStyle, UpperCasePipe, DecimalPipe],
+  templateUrl: './team.component.html',
+  styleUrl: './team.component.scss'
 })
 export class TeamComponent implements OnInit {
 

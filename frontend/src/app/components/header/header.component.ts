@@ -42,7 +42,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
 
-   
+
 
     const observer = {
       next: (item: unknown) => console.log(`Une boite arrive ${item}`),
@@ -56,6 +56,7 @@ export class HeaderComponent implements OnInit {
       // myObserver.unsubscribe();
       myObserver.next('Boite 4');
 
+      myObserver.next('Boite 1');
       myObserver.next('Boite 1');
       myObserver.error(new Error('Erreur de livraison'));
       myObserver.complete();
