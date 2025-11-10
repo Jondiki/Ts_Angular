@@ -3,12 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-      "dev": "concurrently \"npm run build:css\" \"ng serve\"",
+    "dev": "concurrently \"npm run build:css\" \"ng serve\"",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "build:css": "tailwindcss -i ./src/styles/tailwind.css -o ./src/styles/output.css --watch",
-
     "test": "ng test"
   },
   "private": true,
@@ -38,7 +37,7 @@
     "@angular/compiler-cli": "^19.1.1",
     "@types/file-saver": "^2.0.7",
     "@types/jasmine": "~5.1.0",
-    "@types/xlsx": "^0.0.36",
+    "@types/xlsx": "^0.0.35",
     "autoprefixer": "^10.4.21",
     "jasmine-core": "~5.2.0",
     "karma": "~6.4.0",
