@@ -58,6 +58,10 @@ export class TeamListComponent implements OnInit {
       tap(num => this.logger(num))
     );
 
+    const interval2$ = interval(2000).pipe(
+      map(value => value * 10));
+    setTimeout(() => interval2$.subscribe(val => console.log("hello",val)), 1000);
+    
 
 
     this.searchInput.valueChanges.pipe(
