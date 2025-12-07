@@ -1,6 +1,6 @@
-import { interval, Observable, ObservableLike } from 'rxjs';
-import { filter, take,debounceTime, distinctUntilChanged, map, switchMap, tap } from 'rxjs/operators';
-import { Component, Input, OnInit } from '@angular/core';
+import { interval, Observable, ObservableLike, Subject } from 'rxjs';
+import { filter, take,debounceTime, distinctUntilChanged, map, switchMap, tap, takeUntil } from 'rxjs/operators';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { Team } from '../../models/team'
@@ -16,11 +16,11 @@ import 'animate.css';
     templateUrl: './team-list.component.html',
     styleUrl: './team-list.component.css'
 })
-export class TeamListComponent implements OnInit {
+export class TeamListComponent implements OnInit, OnDestroy {
 
   interval$!: Observable<string>;
   monInterval$ !: Observable<number>;
-
+  destroy$!: Subject<boolean>;
 
   teams!: Team[];
   filteredTeams!: Team[];
@@ -40,6 +40,7 @@ export class TeamListComponent implements OnInit {
     });
 
     this.interval$ = interval(1000).pipe(
+      takeUntil(this.destroy$),
       //filter les emissions avec filter
       filter(value => value % 3 == 0),
       //transfomer les emissions avec map
@@ -54,17 +55,20 @@ export class TeamListComponent implements OnInit {
 
 
     this.monInterval$ = interval(2000).pipe(
+      takeUntil(this.destroy$),
       filter(value => value % 2 == 0),
       tap(num => this.logger(num))
     );
 
     const interval2$ = interval(2000).pipe(
+      takeUntil(this.destroy$),
       map(value => value * 10));
     setTimeout(() => interval2$.subscribe(val => console.log("hello",val)), 1000);
     
 
 
     this.searchInput.valueChanges.pipe(
+      takeUntil(this.destroy$),
       debounceTime(300),
       distinctUntilChanged(),
       map(searchTerm => searchTerm?.toLowerCase() || ''),
@@ -82,9 +86,10 @@ export class TeamListComponent implements OnInit {
 
   }
 
-
-
-
+  ngOnDestroy(): void {
+    this.destroy$.next(true);
+    this.destroy$.complete();
+  }
 
   logger(text: number) {
     // console.log(`log : ${text}`);  pareil
