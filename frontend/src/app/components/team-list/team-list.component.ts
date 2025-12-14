@@ -55,9 +55,9 @@ export class TeamListComponent implements OnInit, OnDestroy {
 
 
     this.monInterval$ = interval(2000).pipe(
-      takeUntil(this.destroy$),
       filter(value => value % 2 == 0),
       tap(num => this.logger(num))
+    
     );
 
     const interval2$ = interval(2000).pipe(
@@ -88,7 +88,6 @@ export class TeamListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.destroy$.next(true);
-    this.destroy$.complete();
   }
 
   logger(text: number) {
